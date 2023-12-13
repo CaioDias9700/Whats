@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dados do CSV</title>
+    <link rel="stylesheet" type="text/css" href="../static/table.css">
+</head>
+<body>
+    <h1>Dados do CSV</h1>
+    <button id="myButton">Minha Rota</button>
+    <table>
+        <tr>
+            {% for column in data.columns %}
+                <th>{{ column }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in data.data %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            window.location.href = '/Enviar';
+        });
+    </script>
+</body>
+</html>
